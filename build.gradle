@@ -23,7 +23,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.3'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.3'
 	
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
@@ -34,9 +34,11 @@ implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web
     // https://mvnrepository.com/artifact/com.twilio.sdk/twilio
 	implementation group: 'com.twilio.sdk', name: 'twilio', version: '9.2.5'
 	// https://mvnrepository.com/artifact/com.google.guava/guava
-implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+	implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+	// https://mvnrepository.com/artifact/com.plivo/plivo-java
+    implementation group: 'com.plivo', name: 'plivo-java', version: '5.21.0'
+
 	
-    
 }
 
 test {

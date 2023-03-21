@@ -27,14 +27,15 @@ public class TwilioProxyCall implements ProviderProxyCall {
 		 String recordingStatusCallback = BaseUrl.urlString + "/twilio_recording";
 		    Twilio.init(proxyCallProperty.getAccountId(), proxyCallProperty.getAuthToken());
 		    String answerurl = null;
-		    try {
-		      answerurl = BaseUrl.urlString + "/twilio_xml?caller_id=" + proxyCallProperty.getCallerId() + "&caller_id="
-		              + URLEncoder.encode(proxyCallProperty.getFromNumber(), "UTF-8") + "&leg_2_number="
-		              + URLEncoder.encode(proxyCallProperty.getToNumber(), "UTF-8") + "&recording_call_back="
-		              + URLEncoder.encode(recordingStatusCallback, "UTF-8");
-		    } catch (UnsupportedEncodingException e) {
-		      e.printStackTrace();
-		    }
+//		    try {
+//		      answerurl = BaseUrl.urlString + "/twilio_xml?caller_id=" + proxyCallProperty.getCallerId() + "&caller_id="
+//		              + URLEncoder.encode(proxyCallProperty.getFromNumber(), "UTF-8") + "&leg_2_number="
+//		              + URLEncoder.encode(proxyCallProperty.getToNumber(), "UTF-8") + "&recording_call_back="
+//		              + URLEncoder.encode(recordingStatusCallback, "UTF-8");
+//		    } catch (UnsupportedEncodingException e) {
+//		      e.printStackTrace();
+//		    }
+		    answerurl="http://demo.twilio.com/docs/voice.xml";
 		    Call call=null;
 		    try{
 		      call = Call

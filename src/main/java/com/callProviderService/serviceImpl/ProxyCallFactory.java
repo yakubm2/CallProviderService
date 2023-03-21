@@ -24,6 +24,8 @@ public class ProxyCallFactory {
 		switch (provider) {
 		case TWILIO:
 			return getTwilioProxyCallInstance(proxyCallRequest);
+		case PLIVO:
+			return getPlivoProxyCallInstance(proxyCallRequest);
 		default:
 			return getTwilioProxyCallInstance(proxyCallRequest);
 		}
@@ -35,5 +37,12 @@ public class ProxyCallFactory {
 		ProxyCall twilioCallproperties = ProxyCallUtils.toTwilioProxyCall(twilioCallRequest,
 				twilioCallCallConfig);
 		return new TwilioProxyCall(twilioCallproperties);
+	}
+	
+	private ProviderProxyCall getPlivoProxyCallInstance(ProxyCallRequest plivoCallRequest) {
+		ProxyCallConfig plivoCallConfig = ProxyCallUtils.toPlivoCallConfig();
+		ProxyCall plivoCallproperties = ProxyCallUtils.toPlivoProxyCall(plivoCallRequest,
+				plivoCallConfig);
+		return new PlivoProxyCall(plivoCallproperties);
 	}
 }
