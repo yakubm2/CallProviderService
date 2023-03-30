@@ -32,7 +32,7 @@ public class TwilioProxyCall implements ProviderProxyCall {
 		    Call call=null;
 		    try{
 		      call = Call
-		              .creator(new com.twilio.type.PhoneNumber(proxyCallProperty.getFromNumber()), new com.twilio.type.PhoneNumber(proxyCallProperty.getCallerId()),
+		              .creator(new com.twilio.type.PhoneNumber(proxyCallProperty.getFromNumber()), new com.twilio.type.PhoneNumber(proxyCallProperty.getToNumber()),
 		                      URI.create(answerurl))
 		              .create();
 		      return ProxyCallResponse.builder().callSid(call.getSid()).build();
